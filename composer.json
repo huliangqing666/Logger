@@ -1,28 +1,29 @@
 {
-    "name": "hulq/pay_distribute",
-    "description": "pay-test",
-    "license": "MIT",
-    "require": {
-        "monolog/monolog": "2.x-dev"
-    },
-    "autoload": {
-        "psr-4": {
-            "Hulq\\PayDistribute\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "MyUtils\\Tests\\": "test/"
-        }
-    },
-    "authors": [
-        {
-            "name": "xiaohu",
-            "email": "951004925@qq.cm"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require-dev": {
-        "phpunit/phpunit": "9.6.x-dev"
+  "name": "hulq/pay_distribute",
+  "description": "pay-test",
+  "license": "MIT",
+  "require": {
+    "monolog/monolog": "^2.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hulq\\PayDistribute\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hulq\\PayDistribute\\Tests\\": "test/"
+    }
+  },
+  "authors": [
+    {
+      "name": "xiaohu",
+      "email": "951004925@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  }
 }

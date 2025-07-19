@@ -14,14 +14,14 @@ class Pay
     {
         $this->redis = new \Redis();
 
-        $this->redis->connect('127.0.0.1',6379);
+        $this->redis->connect('127.0.0.1', 6379);
 
         $this->redis->select(0);
 
         $this->log = LogHelper::getLogger($this->log_name);
     }
 
-    public function setFlag(String $orderSn, String $flag)
+    public function setFlag(string $orderSn, string $flag)
     {
         $this->log->info("测试");
         if ($this->redis) {
