@@ -1,15 +1,24 @@
 <?php
 namespace Hulq\PayDistribute;
 
-use http\Env\Request;
-use Monolog\Formatter\JsonFormatter;
 use Monolog\Logger;
 use Monolog\Handler\RotatingFileHandler;
 
 class LogHelper
 {
+    /**
+     * @var array
+     */
     private static $loggers = [];
 
+
+    /**
+     * Func getLogger
+     * @author huliangqing
+     * @date 2025-07-19
+     * @param $channel
+     * @return mixed|Logger
+     */
     public static function getLogger($channel = 'app')
     {
         if (!isset(self::$loggers[$channel])) {
