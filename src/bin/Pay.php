@@ -1,6 +1,6 @@
 <?php
 
-namespace Hulq\PayDistribute;
+namespace Hulq\PayDistribute\bin;
 
 class Pay
 {
