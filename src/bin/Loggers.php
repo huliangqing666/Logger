@@ -15,12 +15,12 @@ class Loggers
 
     /**
      * Func getLogger
-     * @author huliangqing
-     * @date 2025-07-19
-     * @param $name
+     * @param string $name
      * @return LoggerInterface
+     *@author huliangqing
+     * @date 2025-07-19
      */
-    public static function getLogger($name = 'app'): LoggerInterface
+    public static function getLogger(string $name = 'app'): LoggerInterface
     {
         if (!isset(self::$logger)) {
             self::$logger = LogHelper::getLogger($name);

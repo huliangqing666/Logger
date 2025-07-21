@@ -8,7 +8,10 @@
   "autoload": {
     "psr-4": {
       "Hulq\\PayDistribute\\": "src/"
-    }
+    },
+    "files": [
+      "src/helper.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
