@@ -2,6 +2,7 @@
 
 namespace Hulq\PayDistribute\bin;
 
+use Hulq\PayDistribute\LogHelper;
 use Psr\Log\LoggerInterface;
 
 class Loggers

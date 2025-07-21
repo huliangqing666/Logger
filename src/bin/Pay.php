@@ -2,6 +2,8 @@
 
 namespace Hulq\PayDistribute\bin;
 
+use Hulq\PayDistribute\LogHelper;
+
 class Pay
 {
     public $redis;

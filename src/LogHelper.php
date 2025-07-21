@@ -1,9 +1,9 @@
 <?php
-namespace Hulq\PayDistribute\bin;
+namespace Hulq\PayDistribute;
 
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
-use const Hulq\PayDistribute\ROOT_PATH;
+use const Hulq\PayDistribute\bin\ROOT_PATH;
 
 class LogHelper
 {
