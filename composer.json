@@ -1,6 +1,6 @@
 {
-  "name": "hulq/pay_distribute",
-  "description": "pay-test",
+  "name": "hulq/loggers",
+  "description": "Loggers",
   "license": "MIT",
   "require": {
     "monolog/monolog": "^1.27.1"
