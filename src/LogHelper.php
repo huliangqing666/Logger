@@ -25,7 +25,10 @@ class LogHelper
 
             $logger = new Logger($channel);
 
-            $logDir = defined('ROOT_PATH') ? ROOT_PATH . 'runtime/logs/' : __DIR__ . '/../runtime/logs/';
+
+            $logDir = defined('ROOT_PATH') ? ROOT_PATH . 'runtime/logs/'.date("Ymd").'/' : __DIR__ . '/../runtime/logs/'.date("Ymd").'/';
+
+            //$logDir = defined('ROOT_PATH') ? ROOT_PATH . 'runtime/logs/' : __DIR__ . '/../runtime/logs/';
 
             if (!is_dir($logDir)) {
 
