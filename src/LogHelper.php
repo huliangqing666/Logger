@@ -3,6 +3,7 @@ namespace Hulq\PayDistribute;
 
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
+use Hulq\PayDistribute\Formatter\ReadableFormatter;
 use const Hulq\PayDistribute\bin\ROOT_PATH;
 
 class LogHelper
@@ -38,13 +39,12 @@ class LogHelper
                 }
             }
 
-            $logPath = $logDir . $channel . '.log';
+            $logPath = $logDir . $channel . '-' . date('Y-m-d') . '.log';
 
-            $logger->pushHandler(new RotatingFileHandler($logPath, 7, Logger::DEBUG));
-
-//            $handler = new RotatingFileHandler($logPath, 7, Logger::DEBUG);
-//            $handler->setFormatter(new JsonFormatter()); // JSON 格式
-//            $logger->pushHandler($handler);
+            // 创建处理器并使用自定义格式化器
+            $handler = new RotatingFileHandler($logPath, 7, Logger::DEBUG);
+            $handler->setFormatter(new ReadableFormatter());
+            $logger->pushHandler($handler);
 
             self::$loggers[$channel] = $logger;
         }

@@ -32,49 +32,83 @@ class Loggers
      * Func info
      * @author huliangqing
      * @date 2025-07-19
-     * @param string $message
-     * @param array $context
+     * @param string|array $message 日志消息或上下文数组
+     * @param array $context 上下文信息（当第一个参数是字符串时使用）
      */
 
-    public static function info(string $message, array $context = []): void
+    public static function info($message, array $context = []): void
     {
-        self::getLogger()->info($message, self::withRequestContext($context));
+        if (is_array($message)) {
+            // 如果第一个参数是数组，将其作为上下文，消息为空或从数组中提取
+            $logMessage = '';
+            $finalContext = self::withRequestContext($message);
+        } else {
+            // 如果第一个参数是字符串，正常处理
+            $logMessage = $message;
+            $finalContext = self::withRequestContext($context);
+        }
+        
+        self::getLogger()->info($logMessage, $finalContext);
     }
 
     /**
      * Func warning
      * @author huliangqing
      * @date 2025-07-19
-     * @param string $message
-     * @param array $context
+     * @param string|array $message 日志消息或上下文数组
+     * @param array $context 上下文信息（当第一个参数是字符串时使用）
      */
-    public static function warning(string $message, array $context = []): void
+    public static function warning($message, array $context = []): void
     {
-        self::getLogger()->warning($message, self::withRequestContext($context));
+        if (is_array($message)) {
+            $logMessage = '';
+            $finalContext = self::withRequestContext($message);
+        } else {
+            $logMessage = $message;
+            $finalContext = self::withRequestContext($context);
+        }
+        
+        self::getLogger()->warning($logMessage, $finalContext);
     }
 
     /**
      * Func error
      * @author huliangqing
      * @date 2025-07-19
-     * @param string $message
-     * @param array $context
+     * @param string|array $message 日志消息或上下文数组
+     * @param array $context 上下文信息（当第一个参数是字符串时使用）
      */
-    public static function error(string $message, array $context = []): void
+    public static function error($message, array $context = []): void
     {
-        self::getLogger()->error($message, self::withRequestContext($context));
+        if (is_array($message)) {
+            $logMessage = '';
+            $finalContext = self::withRequestContext($message);
+        } else {
+            $logMessage = $message;
+            $finalContext = self::withRequestContext($context);
+        }
+        
+        self::getLogger()->error($logMessage, $finalContext);
     }
 
     /**
      * Func debug
      * @author huliangqing
      * @date 2025-07-19
-     * @param string $message
-     * @param array $context
+     * @param string|array $message 日志消息或上下文数组
+     * @param array $context 上下文信息（当第一个参数是字符串时使用）
      */
-    public static function debug(string $message, array $context = []): void
+    public static function debug($message, array $context = []): void
     {
-        self::getLogger()->debug($message, self::withRequestContext($context));
+        if (is_array($message)) {
+            $logMessage = '';
+            $finalContext = self::withRequestContext($message);
+        } else {
+            $logMessage = $message;
+            $finalContext = self::withRequestContext($context);
+        }
+        
+        self::getLogger()->debug($logMessage, $finalContext);
     }
 
     /**
@@ -90,7 +124,6 @@ class Loggers
             'ip' => $_SERVER['REMOTE_ADDR'] ?? 'cli',
             'uri' => $_SERVER['REQUEST_URI'] ?? 'cli',
             'method' => $_SERVER['REQUEST_METHOD'] ?? 'cli',
-            'time' => date('Y-m-d H:i:s'),
         ], $context);
     }
 
