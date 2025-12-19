@@ -4,7 +4,7 @@ namespace Hulq\PayDistribute;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Hulq\PayDistribute\Formatter\ReadableFormatter;
-use const Hulq\PayDistribute\bin\ROOT_PATH;
+
 
 class LogHelper
 {
