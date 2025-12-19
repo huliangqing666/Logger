@@ -32,7 +32,6 @@ class LogHelper
 
             $logDir = dirname(__DIR__, 3) . '/runtime/logs/' . date('Ymd') . '/';
 
-
             //$logDir = defined('ROOT_PATH') ? ROOT_PATH . 'runtime/logs/' : __DIR__ . '/../runtime/logs/';
 
             if (!is_dir($logDir)) {
