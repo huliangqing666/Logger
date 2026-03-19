@@ -8,7 +8,7 @@ use  \Hulq\PayDistribute\bin\Loggers;
 if (!function_exists('loggers_set_name')) {
     function loggers_set_name(string $name)
     {
-        Loggers::getLogger($name);
+       // Loggers::getLogger($name);
     }
 }
 
